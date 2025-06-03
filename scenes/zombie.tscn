@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://sh38s0emsf6d"]
+[gd_scene load_steps=22 format=4 uid="uid://cbkbqrw4mu4l"]
 
 [ext_resource type="Script" path="res://assets/Zombie/zombie.gd" id="1_p4ylb"]
 [ext_resource type="Texture2D" uid="uid://c4hjbp2av5dvr" path="res://assets/Zombie/skin_orc.png" id="2_m411e"]

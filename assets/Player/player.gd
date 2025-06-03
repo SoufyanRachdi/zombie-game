@@ -15,7 +15,8 @@ var energy := MAX_ENERGY
 var bullet_left := 0  # initialized in _ready()
 
 @export var bullet := preload("res://assets/bullet/bullet.tscn")
-@export var health := 200
+@export var max_health := 1000
+@export var health =200
 
 @onready var head: Node3D = $head
 @onready var camera_3d: Camera3D = $head/Camera3D
@@ -29,7 +30,7 @@ var bullet_left := 0  # initialized in _ready()
 
 func _ready() -> void:
 	bullet_left = max_bullets
-	health = 200  # Ensure health is set to max at start
+	health = max_health  # Ensure health is set to max at start
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if defaite_menu:
 		defaite_menu.visible = false
@@ -40,8 +41,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera_3d.rotate_x(-event.relative.y * SENSITIVITY)
 		camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 
-func damage():
-	health -= 20
+func damage(x:int):
+	health -= x
 	print("Took damage. Health:", health)
 	if health <= 0:
 		death()
@@ -49,7 +50,7 @@ func damage():
 func _physics_process(delta: float) -> void:
 	# UI Updates
 	bullets_label.text = str(bullet_left) + " / " + str(max_bullets)
-	health_label.text = str(health) + " / 200"
+	health_label.text = str(health) + " / "+str(max_health)
 	energy_label.text = str(int(energy)) + " / " + str(MAX_ENERGY)
 
 	# Gravity

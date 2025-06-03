@@ -51,5 +51,5 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 
 func _on_damage_timer_timeout() -> void:
 	if player_in_area:
-		player.damage()  # Ensure `damage()` exists on the player
+		player.damage(10)  # Ensure `damage()` exists on the player
 	pass

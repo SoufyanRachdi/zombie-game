@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dbv1kqldabi8d"]
+[gd_scene load_steps=22 format=4 uid="uid://sayqvx3d5dwe"]
 
 [ext_resource type="Script" path="res://assets/Zombie/zombie.gd" id="1_p4ylb"]
 [ext_resource type="Texture2D" uid="uid://c4hjbp2av5dvr" path="res://assets/Zombie/skin_orc.png" id="2_m411e"]
@@ -595,4 +595,5 @@ autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
