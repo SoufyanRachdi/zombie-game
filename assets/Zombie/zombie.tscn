@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://sayqvx3d5dwe"]
+[gd_scene load_steps=22 format=4 uid="uid://dyg20osunvcff"]
 
 [ext_resource type="Script" path="res://assets/Zombie/zombie.gd" id="1_p4ylb"]
 [ext_resource type="Texture2D" uid="uid://c4hjbp2av5dvr" path="res://assets/Zombie/skin_orc.png" id="2_m411e"]
@@ -415,7 +415,7 @@ size = Vector3(0.0431982, 0.147832, 0.05)
 [sub_resource type="SphereShape3D" id="SphereShape3D_nht4a"]
 radius = 0.0433892
 
-[node name="zombie" type="CharacterBody3D" groups=["enemy"]]
+[node name="zombie2" type="CharacterBody3D" groups=["enemy"]]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.0173439, 0.0144901, 0)
 script = ExtResource("1_p4ylb")
 

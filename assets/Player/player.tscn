@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyd48u6y02av8"]
+[gd_scene load_steps=11 format=3 uid="uid://dyd48u6y02av8"]
 
 [ext_resource type="Script" path="res://assets/Player/player.gd" id="1_xgfc0"]
 [ext_resource type="PackedScene" uid="uid://djc4nfdt532vb" path="res://assets/gun/gun.tscn" id="2_wx7oi"]
@@ -15,18 +15,33 @@ font_color = Color(0.184314, 1, 1, 1)
 outline_size = 50
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_yldwr"]
-line_spacing = 12.0
-font_size = 90
-font_color = Color(0.68, 0, 0, 1)
-outline_size = 15
-shadow_size = 6
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
-[sub_resource type="LabelSettings" id="LabelSettings_g77qd"]
-font_size = 50
-font_color = Color(0.92549, 0.839216, 0.243137, 1)
-outline_size = 50
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fill"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_energy_bg"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_energy_fill"]
+bg_color = Color(1, 0.9, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_xgfc0")
@@ -60,18 +75,22 @@ offset_right = 1019.0
 offset_bottom = 592.0
 texture = ExtResource("3_6rnpp")
 
-[node name="health" type="Label" parent="head/Camera3D"]
-offset_left = 765.0
-offset_top = 20.0
-offset_right = 1132.0
-offset_bottom = 167.0
-text = "200/200"
-label_settings = SubResource("LabelSettings_yldwr")
+[node name="healthbar" type="ProgressBar" parent="head/Camera3D"]
+offset_left = 1503.0
+offset_top = 52.0
+offset_right = 1853.0
+offset_bottom = 79.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fill")
+max_value = 200.0
+value = 100.0
 
-[node name="energy" type="Label" parent="head/Camera3D"]
-offset_left = 22.0
-offset_top = 77.0
-offset_right = 156.0
-offset_bottom = 146.0
-text = "15/15"
-label_settings = SubResource("LabelSettings_g77qd")
+[node name="energybar" type="ProgressBar" parent="head/Camera3D"]
+offset_left = 1503.0
+offset_top = 118.0
+offset_right = 1853.0
+offset_bottom = 145.0
+theme_override_styles/background = SubResource("StyleBoxFlat_energy_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_energy_fill")
+max_value = 15.0
+value = 15.0

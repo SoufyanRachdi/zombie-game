@@ -15,7 +15,7 @@ var energy := MAX_ENERGY
 var bullet_left := 0  # initialized in _ready()
 
 @export var bullet := preload("res://assets/bullet/bullet.tscn")
-@export var max_health := 1000
+@export var max_health :=200
 @export var health =200
 
 @onready var head: Node3D = $head
@@ -24,9 +24,9 @@ var bullet_left := 0  # initialized in _ready()
 @onready var gun_animation: AnimationPlayer = $head/Camera3D/gun/AnimationPlayer
 
 @onready var bullets_label := $head/Camera3D/bullets
-@onready var health_label := $head/Camera3D/health
-@onready var energy_label := $head/Camera3D/energy
 @onready var defaite_menu = get_parent().get_node_or_null("DefaiteMenu")
+@onready var healthbar := $head/Camera3D/healthbar
+@onready var energybar := $head/Camera3D/energybar
 
 func _ready() -> void:
 	bullet_left = max_bullets
@@ -50,9 +50,10 @@ func damage(x:int):
 func _physics_process(delta: float) -> void:
 	# UI Updates
 	bullets_label.text = str(bullet_left) + " / " + str(max_bullets)
-	health_label.text = str(health) + " / "+str(max_health)
-	energy_label.text = str(int(energy)) + " / " + str(MAX_ENERGY)
-
+	healthbar.max_value = max_health
+	healthbar.value = health
+	energybar.max_value = MAX_ENERGY
+	energybar.value = energy
 	# Gravity
 	if not is_on_floor():
 		velocity.y -= gravity * delta
