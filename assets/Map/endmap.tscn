@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dges5ecqxqmak"]
+
+[ext_resource type="Script" path="res://assets/Map/endmap.gd" id="1_qkeup"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_phcm3"]
+size = Vector3(200, 0.1, 200)
+
+[node name="endmap" type="Area3D"]
+script = ExtResource("1_qkeup")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["end"]]
+shape = SubResource("BoxShape3D_phcm3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

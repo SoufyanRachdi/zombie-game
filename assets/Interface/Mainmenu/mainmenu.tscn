@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://byas5n237xrc3"]
+
+[ext_resource type="Script" path="res://assets/Interface/Mainmenu/mainmenu.gd" id="1_trugd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdfqn"]
+bg_color = Color(0.164706, 0.705882, 0.266667, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x5ata"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rdbus"]
+font_size = 100
+
+[node name="mainmenu" type="CanvasLayer"]
+script = ExtResource("1_trugd")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jdfqn")
+
+[node name="BeginButton" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 608.0
+offset_top = 368.0
+offset_right = 1335.0
+offset_bottom = 527.0
+theme_override_font_sizes/font_size = 50
+text = "begin"
+icon = SubResource("ViewportTexture_x5ata")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 559.0
+offset_top = 105.0
+offset_right = 1403.0
+offset_bottom = 242.0
+localize_numeral_system = false
+text = "My Zombie Game
+"
+label_settings = SubResource("LabelSettings_rdbus")

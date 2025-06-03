@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3ttff36p5m3y"]
+
+[ext_resource type="Script" path="res://assets/Interface/DefaiteMenu/defaitemenu.gd" id="1_4g3wd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_baec7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_25qjl"]
+font_size = 100
+
+[node name="DefaiteMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_4g3wd")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_baec7")
+
+[node name="replay_button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 372.0
+offset_right = 1451.0
+offset_bottom = 521.0
+theme_override_font_sizes/font_size = 50
+text = "Replay
+"
+
+[node name="menu_button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 587.0
+offset_right = 1451.0
+offset_bottom = 736.0
+theme_override_font_sizes/font_size = 50
+text = "Menu"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 105.0
+offset_right = 1403.0
+offset_bottom = 242.0
+localize_numeral_system = false
+text = "My Zombie Game
+"
+label_settings = SubResource("LabelSettings_25qjl")
