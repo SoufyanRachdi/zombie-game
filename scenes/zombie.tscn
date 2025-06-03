@@ -1,7 +1,64 @@
 [gd_scene load_steps=22 format=4 uid="uid://cbkbqrw4mu4l"]
 
-[ext_resource type="Script" path="res://assets/Zombie/zombie.gd" id="1_p4ylb"]
 [ext_resource type="Texture2D" uid="uid://c4hjbp2av5dvr" path="res://assets/Zombie/skin_orc.png" id="2_m411e"]
+
+[sub_resource type="GDScript" id="GDScript_oynxo"]
+script/source = "extends CharacterBody3D
+
+@onready var player: CharacterBody3D = %player
+@export var SPEED = 5.0
+@export var gravity = 10
+@export var health = 100
+
+@onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
+@onready var damage_timer: Timer = $DamageTimer  # Make sure you add this Timer node in the scene
+var player_in_area: bool = false  # Tracks if player is in the damage area
+
+func _ready() -> void:
+	print(\"Player node:\", player)
+	$holder/AnimationPlayer.play(\"mixamo_com\")
+	damage_timer.wait_time = 0.1
+	damage_timer.one_shot = false
+	pass
+
+func _physics_process(delta: float) -> void:
+	velocity.y -= gravity
+	var dir = to_local(navigation_agent_3d.get_next_path_position()).normalized()
+	velocity = dir * SPEED
+	move_and_slide()
+	$holder.look_at(player.position)
+	if(health<=0):
+		queue_free()
+	pass
+
+func make_path():
+	navigation_agent_3d.target_position = player.global_position
+	pass
+func damage():
+	health -= 20
+	print(\"Took damage. Health:\", health)
+
+func _on_timer_timeout() -> void:
+	make_path()
+	pass
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group(\"player\"):
+		player_in_area = true
+		damage_timer.start()  # Start damaging every 0.5s
+	pass
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body.is_in_group(\"player\"):
+		player_in_area = false
+		damage_timer.stop()  # Stop damaging when player leaves
+	pass
+
+func _on_damage_timer_timeout() -> void:
+	if player_in_area:
+		player.damage(10)  # Ensure `damage()` exists on the player
+	pass
+"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v7mib"]
 resource_name = "lambert1"
@@ -416,8 +473,8 @@ size = Vector3(0.0431982, 0.147832, 0.05)
 radius = 0.0340978
 
 [node name="zombie" type="CharacterBody3D" groups=["enemy"]]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.0173439, 0.0144901, 0)
-script = ExtResource("1_p4ylb")
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0.0173439, 0.0144901, 0)
+script = SubResource("GDScript_oynxo")
 
 [node name="holder" type="Node3D" parent="."]
 
@@ -585,7 +642,7 @@ path_desired_distance = 0.75
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0871985, -0.0661653)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0731554, -0.0661653)
 shape = SubResource("SphereShape3D_nht4a")
 
 [node name="DamageTimer" type="Timer" parent="."]
@@ -593,6 +650,10 @@ wait_time = 0.5
 one_shot = true
 autostart = true
 
+[node name="healthbar" type="Node3D" parent="."]
+transform = Transform3D(-0.7786, -0.620354, -0.0945717, 0.308171, -0.246715, -0.918783, 0.546638, -0.744509, 0.383267, 0, 0, 0)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

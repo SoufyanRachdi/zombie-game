@@ -7,7 +7,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_oub4m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sx26b"]
-height = 2.2
+height = 2.5
 
 [sub_resource type="LabelSettings" id="LabelSettings_mix5p"]
 font_size = 50

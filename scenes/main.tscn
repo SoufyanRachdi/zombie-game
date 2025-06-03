@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://bjbw5hkwrcn73"]
 
+[ext_resource type="PackedScene" uid="uid://cbkbqrw4mu4l" path="res://scenes/zombie.tscn" id="1_pm6kr"]
 [ext_resource type="Texture2D" uid="uid://b5eac7alakrwe" path="res://assets/Sprites/floor_texture.png" id="1_tjgkk"]
 [ext_resource type="PackedScene" uid="uid://dyd48u6y02av8" path="res://assets/Player/player.tscn" id="2_wi3ph"]
-[ext_resource type="PackedScene" uid="uid://dyg20osunvcff" path="res://assets/Zombie/zombie.tscn" id="3_n54t2"]
 [ext_resource type="PackedScene" uid="uid://dges5ecqxqmak" path="res://assets/Map/endmap.tscn" id="4_xwyg4"]
 [ext_resource type="PackedScene" uid="uid://c3ttff36p5m3y" path="res://assets/Interface/DefaiteMenu/defaitemenu.tscn" id="5_miufu"]
 
@@ -47,6 +47,24 @@ uv1_scale = Vector3(6, 4, 3)
 
 [node name="main" type="Node3D"]
 
+[node name="zombie" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 11.1656, 0.43235, -18.7539)
+
+[node name="zombie2" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, -10.0983, 0.43235, 0)
+
+[node name="zombie3" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 11.1656, 0.43235, -10.2226)
+
+[node name="zombie4" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 11.1656, 0.43235, 14.0844)
+
+[node name="zombie5" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 11.1656, 0.43235, 0)
+
+[node name="zombie6" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 15.9099, 0.43235, 0)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wu04l")
 
@@ -57,18 +75,6 @@ shadow_enabled = true
 [node name="player" parent="." instance=ExtResource("2_wi3ph")]
 unique_name_in_owner = true
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.02153, 6.77489, 0)
-
-[node name="zombie" parent="." instance=ExtResource("3_n54t2")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.892, 1.61976, 0)
-
-[node name="zombie2" parent="." instance=ExtResource("3_n54t2")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 16.7436, 1.61976, 0)
-
-[node name="zombie3" parent="." instance=ExtResource("3_n54t2")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.892, 1.61976, -8.98701)
-
-[node name="zombie4" parent="." instance=ExtResource("3_n54t2")]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 13.892, 1.61976, 7.75359)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.75

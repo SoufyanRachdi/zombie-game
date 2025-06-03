@@ -7,6 +7,7 @@ extends CharacterBody3D
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var damage_timer: Timer = $DamageTimer  # Make sure you add this Timer node in the scene
+@onready var healthbar: ProgressBar = $healthbar
 var player_in_area: bool = false  # Tracks if player is in the damage area
 
 func _ready() -> void:
@@ -14,6 +15,8 @@ func _ready() -> void:
 	$holder/AnimationPlayer.play("mixamo_com")
 	damage_timer.wait_time = 0.1
 	damage_timer.one_shot = false
+	healthbar.max_value = health
+	healthbar.value = health
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -29,8 +32,10 @@ func _physics_process(delta: float) -> void:
 func make_path():
 	navigation_agent_3d.target_position = player.global_position
 	pass
+
 func damage():
 	health -= 20
+	healthbar.value = health
 	print("Took damage. Health:", health)
 
 func _on_timer_timeout() -> void:
