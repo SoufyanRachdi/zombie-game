@@ -4,10 +4,13 @@ extends CharacterBody3D
 @export var SPEED = 5.0
 @export var gravity = 10
 @export var health = 100
+@onready var animation_zombie: AnimationPlayer = $holder/AnimationPlayer
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var damage_timer: Timer = $DamageTimer  # Make sure you add this Timer node in the scene
-@onready var healthbar: ProgressBar = $healthbar
+@onready var healthbar: Node3D = $healthbar
+@onready var texture_progress_bar: TextureProgressBar = $healthbar/TextureProgressBar
+
 var player_in_area: bool = false  # Tracks if player is in the damage area
 
 func _ready() -> void:
@@ -15,8 +18,8 @@ func _ready() -> void:
 	$holder/AnimationPlayer.play("mixamo_com")
 	damage_timer.wait_time = 0.1
 	damage_timer.one_shot = false
-	healthbar.max_value = health
-	healthbar.value = health
+	texture_progress_bar.max_value = health
+	texture_progress_bar.value = health
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -26,8 +29,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	$holder.look_at(player.position)
 	if(health<=0):
-		queue_free()
+		die()
 	pass
+func die():
+	set_physics_process(false)
+	$CollisionShape3D.disabled = true
+	animation_zombie.play("die")
+	await get_tree().create_timer(animation_zombie.get_animation("die").length).timeout
+	queue_free()
 
 func make_path():
 	navigation_agent_3d.target_position = player.global_position
@@ -35,7 +44,7 @@ func make_path():
 
 func damage():
 	health -= 20
-	healthbar.value = health
+	texture_progress_bar.value = health
 	print("Took damage. Health:", health)
 
 func _on_timer_timeout() -> void:
