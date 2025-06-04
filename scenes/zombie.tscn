@@ -642,6 +642,7 @@ disable_3d = true
 transparent_bg = true
 
 [node name="HealthBarContainer" parent="SubViewport" instance=ExtResource("3_jqc3l")]
+anchor_path = NodePath("../..")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
