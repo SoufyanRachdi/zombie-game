@@ -8,10 +8,10 @@ extends Control
 
 var anchor_node: Node3D
 
-func update_health(current, max):
-	bar.max_value = max
+func update_health(current, maxh):
+	bar.max_value = maxh
 	bar.value = current
-	label.text = "%d/%d" % [current, max]
+	label.text = "%d/%d" % [current, maxh]
 
 func _ready():
 	anchor_node = get_node(anchor_path)

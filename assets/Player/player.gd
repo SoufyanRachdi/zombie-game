@@ -8,7 +8,7 @@ extends CharacterBody3D
 
 @export var MAX_ENERGY := 15.0
 @export var ENERGY_DRAIN := 5.0   # per second when running
-@export var ENERGY_RECOVERY := 3.0  # per second when not running
+@export var ENERGY_RECOVERY := 2.0  # per second when not running
 var energy := MAX_ENERGY
 
 @export var max_bullets := 20
@@ -58,7 +58,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and energy>=4:
+		energy-=4
 		velocity.y = JUMP_VELOCITY
 
 	# Run / Speed handling

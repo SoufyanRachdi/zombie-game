@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dllbhs5out8jc"]
+
+[ext_resource type="PackedScene" uid="uid://b14u8flm5iv1f" path="res://sourcefile/trees/uploads_files_3523647_shapespark-low-poly-plants-kit-double-sided-for-baking.gltf" id="1_lkuhk"]
+
+[node name="uploads_files_3523647_shapespark-low-poly-plants-kit-double-sided-for-baking" instance=ExtResource("1_lkuhk")]
