@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drgqqxj4k6vni"
+uid="uid://cpe73pjmeoy36"
 path.s3tc="res://.godot/imported/uploads_files_3306166_9mm+Bullet_Metallic-Roughness.png-29e065d03f6537007e20b90dea74aba8.s3tc.ctex"
 path.etc2="res://.godot/imported/uploads_files_3306166_9mm+Bullet_Metallic-Roughness.png-29e065d03f6537007e20b90dea74aba8.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "fb09081566de8c8da2c1365415a58007"
 }
 
 [deps]

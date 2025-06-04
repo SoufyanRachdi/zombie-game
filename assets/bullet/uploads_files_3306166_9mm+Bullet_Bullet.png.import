@@ -2,15 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dup82qw726mdy"
+uid="uid://cyym1whaqr44x"
 path.s3tc="res://.godot/imported/uploads_files_3306166_9mm+Bullet_Bullet.png-70dbe395cf997dcb4deb24be317b30b5.s3tc.ctex"
 path.etc2="res://.godot/imported/uploads_files_3306166_9mm+Bullet_Bullet.png-70dbe395cf997dcb4deb24be317b30b5.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "6e23abea275eca69113e7e1055c7dcbd"
 }
 
 [deps]
