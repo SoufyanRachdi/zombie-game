@@ -603,6 +603,8 @@ mesh = SubResource("ArrayMesh_p28ne")
 skin = SubResource("Skin_gw0d2")
 surface_material_override/0 = SubResource("StandardMaterial3D_nlykj")
 
+[node name="HealthbarAnchor" type="Marker3D" parent="holder/Skeleton3D"]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="holder"]
 libraries = {
 "": SubResource("AnimationLibrary_c2saq")
