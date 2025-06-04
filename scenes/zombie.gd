@@ -9,9 +9,9 @@ extends CharacterBody3D
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var damage_timer: Timer = $DamageTimer  # Make sure you add this Timer node in the scene
-@onready var healthbar: Node3D = $healthbar
 @onready var health_bar_container: Control = $SubViewport/HealthBarContainer
-
+var hide_timer := 0.0
+const HIDE_DELAY := 2.0  # seconds to stay visible
 
 var player_in_area: bool = false  # Tracks if player is in the damage area
 
@@ -20,7 +20,7 @@ func _ready() -> void:
 	$holder/AnimationPlayer.play("mixamo_com")
 	damage_timer.wait_time = 0.1
 	damage_timer.one_shot = false
-	
+	health_bar_container.visible =false
 	# Configure the health bar
 	health_bar_container.update_health(health, max_health)
 	  # Enable nine-patch stretching
@@ -35,6 +35,11 @@ func _physics_process(delta: float) -> void:
 	if(health<=0):
 		die()
 	pass
+func _process(delta):
+	if health_bar_container.visible:
+		hide_timer -= delta
+		if hide_timer <= 0:
+			health_bar_container.visible = false
 func die():
 	set_physics_process(false)
 	$CollisionShape3D.disabled = true
@@ -50,7 +55,8 @@ func damage(x:int):
 	health -= x
 	health_bar_container.update_health(health, max_health)
 	print("Took damage. Health:", health)
-
+	health_bar_container.visible = true
+	hide_timer = HIDE_DELAY
 func _on_timer_timeout() -> void:
 	make_path()
 	pass
