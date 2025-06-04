@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=4 uid="uid://cbkbqrw4mu4l"]
+[gd_scene load_steps=26 format=4 uid="uid://cbkbqrw4mu4l"]
 
 [ext_resource type="Script" path="res://scenes/zombie.gd" id="1_nowmp"]
 [ext_resource type="Texture2D" uid="uid://c4hjbp2av5dvr" path="res://assets/Zombie/skin_orc.png" id="2_m411e"]
+[ext_resource type="PackedScene" uid="uid://bwiqx5epehhf7" path="res://assets/Zombie/healthbar.tscn" id="3_jqc3l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v7mib"]
 resource_name = "lambert1"
@@ -448,6 +449,9 @@ size = Vector3(0.0431982, 0.147832, 0.05)
 [sub_resource type="SphereShape3D" id="SphereShape3D_nht4a"]
 radius = 0.0340978
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_gkhe8"]
+viewport_path = NodePath("SubViewport")
+
 [node name="zombie" type="CharacterBody3D" groups=["enemy"]]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0.0173439, 0.0144901, 0)
 script = ExtResource("1_nowmp")
@@ -627,14 +631,15 @@ wait_time = 0.5
 one_shot = true
 autostart = true
 
-[node name="healthbar" type="Node3D" parent="."]
-transform = Transform3D(-0.160902, -0.130659, -0.00172129, 0.0464534, -0.0670854, -0.254918, 0.109328, -0.163792, 0.105782, 0, 0.172866, 0)
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.0369377, 0, 0, 0, 0.0369377, 0, 0, 0, 0.0369377, 0, 0.188085, 0)
+texture = SubResource("ViewportTexture_gkhe8")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="healthbar"]
-offset_left = 633.0
-offset_top = 215.0
-offset_right = 1198.0
-offset_bottom = 302.0
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+
+[node name="HealthBarContainer" parent="SubViewport" instance=ExtResource("3_jqc3l")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

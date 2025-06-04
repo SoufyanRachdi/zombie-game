@@ -4,12 +4,14 @@ extends CharacterBody3D
 @export var SPEED = 5.0
 @export var gravity = 10
 @export var health = 100
+@export var max_health = 100
 @onready var animation_zombie: AnimationPlayer = $holder/AnimationPlayer
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var damage_timer: Timer = $DamageTimer  # Make sure you add this Timer node in the scene
 @onready var healthbar: Node3D = $healthbar
-@onready var texture_progress_bar: TextureProgressBar = $healthbar/TextureProgressBar
+@onready var health_bar_container: Control = $SubViewport/HealthBarContainer
+
 
 var player_in_area: bool = false  # Tracks if player is in the damage area
 
@@ -20,13 +22,8 @@ func _ready() -> void:
 	damage_timer.one_shot = false
 	
 	# Configure the health bar
-	texture_progress_bar.max_value = health
-	texture_progress_bar.value = health
-	texture_progress_bar.size = Vector2(100, 10)  # Set appropriate size
-	texture_progress_bar.tint_under = Color(0.2, 0.2, 0.2, 0.8)  # Dark gray background
-	texture_progress_bar.tint_progress = Color(0.8, 0.2, 0.2, 0.8)  # Red for health
-	texture_progress_bar.tint_over = Color(0, 0, 0, 0)  # Transparent overlay
-	texture_progress_bar.nine_patch_stretch = true  # Enable nine-patch stretching
+	health_bar_container.update_health(health, max_health)
+	  # Enable nine-patch stretching
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -51,7 +48,7 @@ func make_path():
 
 func damage(x:int):
 	health -= x
-	texture_progress_bar.value = health
+	health_bar_container.update_health(health, max_health)
 	print("Took damage. Health:", health)
 
 func _on_timer_timeout() -> void:
