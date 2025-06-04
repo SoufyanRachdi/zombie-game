@@ -18,8 +18,15 @@ func _ready() -> void:
 	$holder/AnimationPlayer.play("mixamo_com")
 	damage_timer.wait_time = 0.1
 	damage_timer.one_shot = false
+	
+	# Configure the health bar
 	texture_progress_bar.max_value = health
 	texture_progress_bar.value = health
+	texture_progress_bar.size = Vector2(100, 10)  # Set appropriate size
+	texture_progress_bar.tint_under = Color(0.2, 0.2, 0.2, 0.8)  # Dark gray background
+	texture_progress_bar.tint_progress = Color(0.8, 0.2, 0.2, 0.8)  # Red for health
+	texture_progress_bar.tint_over = Color(0, 0, 0, 0)  # Transparent overlay
+	texture_progress_bar.nine_patch_stretch = true  # Enable nine-patch stretching
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -42,8 +49,8 @@ func make_path():
 	navigation_agent_3d.target_position = player.global_position
 	pass
 
-func damage():
-	health -= 20
+func damage(x:int):
+	health -= x
 	texture_progress_bar.value = health
 	print("Took damage. Health:", health)
 

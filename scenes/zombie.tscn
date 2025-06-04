@@ -198,6 +198,21 @@ bind/2/name = &"LegR3"
 bind/2/bone = -1
 bind/2/pose = Transform3D(1, 5.72459e-17, 1.56993e-18, -5.72459e-17, 1, 2.44919e-16, -1.56993e-18, -2.44919e-16, 1, 0.01, -5.72459e-19, -1.56993e-20)
 
+[sub_resource type="Animation" id="Animation_bpy0i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_1lxxr"]
 resource_name = "Take 001"
 length = 4.95833
@@ -299,6 +314,22 @@ tracks/13/path = NodePath("Skeleton3D:ArmR3")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = PackedFloat32Array(1.24176e-09, 1, -0.707107, 0.707107, 4.32964e-17, 4.32964e-17)
+
+[sub_resource type="Animation" id="Animation_yjr5k"]
+resource_name = "die"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.5708, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_hrded"]
 resource_name = "mixamo_com"
@@ -402,37 +433,6 @@ tracks/13/path = NodePath("Skeleton3D:ArmR3")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = PackedFloat32Array(0, 1, 0.707107, -0.707107, -4.32964e-17, -4.32964e-17)
-
-[sub_resource type="Animation" id="Animation_yjr5k"]
-resource_name = "die"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1.5708, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_bpy0i"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c2saq"]
 _data = {
@@ -574,7 +574,7 @@ mesh = SubResource("ArrayMesh_r20vs")
 skin = SubResource("Skin_2k3sv")
 surface_material_override/0 = SubResource("StandardMaterial3D_nlykj")
 
-[node name="Head1" type="MeshInstance3D" parent="holder/Skeleton3D"]
+[node name="Head1" type="MeshInstance3D" parent="holder/Skeleton3D" groups=["headenemy"]]
 mesh = SubResource("ArrayMesh_p67w2")
 skin = SubResource("Skin_xsohg")
 surface_material_override/0 = SubResource("StandardMaterial3D_nlykj")
