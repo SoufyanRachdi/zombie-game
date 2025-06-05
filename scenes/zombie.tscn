@@ -625,7 +625,7 @@ path_desired_distance = 0.75
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0731554, -0.0661653)
+transform = Transform3D(1.67634, 0, 0, 0, 1.67634, 0, 0, 0, 1.67634, 0, 0.0985754, -0.0661653)
 shape = SubResource("SphereShape3D_nht4a")
 
 [node name="DamageTimer" type="Timer" parent="."]
