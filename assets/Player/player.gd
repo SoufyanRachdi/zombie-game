@@ -61,6 +61,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor() and energy>=4:
 		energy-=4
 		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("visible"):
+		if(Input.mouse_mode==Input.MOUSE_MODE_CAPTURED):
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 	# Run / Speed handling
 	var is_running = Input.is_action_pressed("speed") and energy > 0 and is_on_floor()

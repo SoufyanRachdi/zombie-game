@@ -46,13 +46,14 @@ size = Vector2(60, 70)
 layer = 0
 script = ExtResource("1_ihuah")
 
-[node name="bottom" type="TouchScreenButton" parent="."]
+[node name="down" type="TouchScreenButton" parent="."]
 position = Vector2(235, 916)
 scale = Vector2(11, 11)
 texture_normal = ExtResource("1_201ix")
 texture_pressed = ExtResource("2_shcr5")
 shape = SubResource("RectangleShape2D_urtaw")
 shape_visible = false
+action = "down"
 
 [node name="left" type="TouchScreenButton" parent="."]
 position = Vector2(79, 779)
@@ -61,6 +62,7 @@ texture_normal = ExtResource("3_ss2ak")
 texture_pressed = ExtResource("4_nc167")
 shape = SubResource("RectangleShape2D_dthhm")
 shape_visible = false
+action = "left"
 
 [node name="right" type="TouchScreenButton" parent="."]
 position = Vector2(396, 789)
@@ -69,6 +71,7 @@ texture_normal = ExtResource("5_dvia3")
 texture_pressed = ExtResource("6_0ftv4")
 shape = SubResource("RectangleShape2D_h0wex")
 shape_visible = false
+action = "right"
 
 [node name="up" type="TouchScreenButton" parent="."]
 position = Vector2(237, 651)
@@ -77,6 +80,7 @@ texture_normal = ExtResource("7_ym34n")
 texture_pressed = ExtResource("8_quvkc")
 shape = SubResource("RectangleShape2D_omo3o")
 shape_visible = false
+action = "up"
 
 [node name="shoot" type="TouchScreenButton" parent="."]
 position = Vector2(1399, 767)
@@ -85,6 +89,7 @@ texture_normal = ExtResource("9_ys5k1")
 texture_pressed = ExtResource("10_c7v7d")
 shape = SubResource("CircleShape2D_siq4c")
 shape_visible = false
+action = "shoot"
 
 [node name="reload" type="TouchScreenButton" parent="."]
 position = Vector2(1697, 608)
@@ -93,14 +98,16 @@ texture_normal = ExtResource("11_wep02")
 texture_pressed = ExtResource("12_86hws")
 shape = SubResource("CircleShape2D_i75ly")
 shape_visible = false
+action = "reload"
 
-[node name="run" type="TouchScreenButton" parent="."]
+[node name="speed" type="TouchScreenButton" parent="."]
 position = Vector2(219, 360)
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("13_iuupd")
 texture_pressed = ExtResource("14_hqusb")
 shape = SubResource("RectangleShape2D_1yd3e")
 shape_visible = false
+action = "speed"
 
 [node name="jump" type="TouchScreenButton" parent="."]
 position = Vector2(1432, 451)
@@ -109,3 +116,4 @@ texture_normal = ExtResource("15_5s210")
 texture_pressed = ExtResource("16_uavu1")
 shape = SubResource("RectangleShape2D_3eisx")
 shape_visible = false
+action = "jump"
