@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjbw5hkwrcn73"]
+[gd_scene load_steps=16 format=3 uid="uid://bjbw5hkwrcn73"]
 
 [ext_resource type="PackedScene" uid="uid://cbkbqrw4mu4l" path="res://scenes/zombie.tscn" id="1_pm6kr"]
 [ext_resource type="Texture2D" uid="uid://b5eac7alakrwe" path="res://assets/Sprites/floor_texture.png" id="1_tjgkk"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://de6kkxkhqu6rb" path="res://assets/tree/tree_m.tscn" id="4_2mj33"]
 [ext_resource type="PackedScene" uid="uid://dges5ecqxqmak" path="res://assets/Map/endmap.tscn" id="4_xwyg4"]
 [ext_resource type="PackedScene" uid="uid://c3ttff36p5m3y" path="res://assets/Interface/DefaiteMenu/defaitemenu.tscn" id="5_miufu"]
+[ext_resource type="PackedScene" uid="uid://dopdg5cugvbl7" path="res://assets/Interface/buttonsinterface/button_interface.tscn" id="7_b5weu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gh0wk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -170,3 +171,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -85.7571, 0)
 
 [node name="DefaiteMenu" parent="." instance=ExtResource("5_miufu")]
 visible = false
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_b5weu")]

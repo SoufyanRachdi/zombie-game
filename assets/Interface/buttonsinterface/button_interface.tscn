@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dopdg5cugvbl7"]
+[gd_scene load_steps=25 format=3 uid="uid://dopdg5cugvbl7"]
 
 [ext_resource type="Texture2D" uid="uid://ctxdf5w0fcrak" path="res://phone UI/down.png" id="1_201ix"]
 [ext_resource type="Texture2D" uid="uid://cn4e6h1u565ov" path="res://phone UI/downGray.png" id="2_shcr5"]
@@ -17,52 +17,93 @@
 [ext_resource type="Texture2D" uid="uid://67gc7g5h6u0r" path="res://phone UI/jump.png" id="15_5s210"]
 [ext_resource type="Texture2D" uid="uid://3l8lxcpxp8d7" path="res://phone UI/jump_clicked.png" id="16_uavu1"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urtaw"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dthhm"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0wex"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omo3o"]
+size = Vector2(14, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_siq4c"]
+radius = 7.95
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i75ly"]
+radius = 9.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yd3e"]
+size = Vector2(700, 900)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3eisx"]
+size = Vector2(60, 70)
+
 [node name="CanvasLayer" type="CanvasLayer"]
+layer = 0
 
 [node name="bottom" type="TouchScreenButton" parent="."]
-position = Vector2(179, 912)
+position = Vector2(235, 916)
 scale = Vector2(11, 11)
 texture_normal = ExtResource("1_201ix")
 texture_pressed = ExtResource("2_shcr5")
+shape = SubResource("RectangleShape2D_urtaw")
+shape_visible = false
 
 [node name="left" type="TouchScreenButton" parent="."]
-position = Vector2(37, 781)
+position = Vector2(79, 779)
 scale = Vector2(11, 11)
 texture_normal = ExtResource("3_ss2ak")
 texture_pressed = ExtResource("4_nc167")
+shape = SubResource("RectangleShape2D_dthhm")
+shape_visible = false
 
 [node name="right" type="TouchScreenButton" parent="."]
-position = Vector2(320, 788)
+position = Vector2(396, 789)
 scale = Vector2(11, 11)
 texture_normal = ExtResource("5_dvia3")
 texture_pressed = ExtResource("6_0ftv4")
+shape = SubResource("RectangleShape2D_h0wex")
+shape_visible = false
 
 [node name="up" type="TouchScreenButton" parent="."]
-position = Vector2(179, 651)
+position = Vector2(237, 651)
 scale = Vector2(11, 11)
 texture_normal = ExtResource("7_ym34n")
 texture_pressed = ExtResource("8_quvkc")
+shape = SubResource("RectangleShape2D_omo3o")
+shape_visible = false
 
 [node name="shoot" type="TouchScreenButton" parent="."]
-position = Vector2(1431, 772)
+position = Vector2(1399, 767)
 scale = Vector2(15.25, 12.9375)
 texture_normal = ExtResource("9_ys5k1")
 texture_pressed = ExtResource("10_c7v7d")
+shape = SubResource("CircleShape2D_siq4c")
+shape_visible = false
 
 [node name="reload" type="TouchScreenButton" parent="."]
 position = Vector2(1697, 608)
 scale = Vector2(11, 11)
 texture_normal = ExtResource("11_wep02")
 texture_pressed = ExtResource("12_86hws")
+shape = SubResource("CircleShape2D_i75ly")
+shape_visible = false
 
 [node name="run" type="TouchScreenButton" parent="."]
-position = Vector2(149, 360)
+position = Vector2(219, 360)
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("13_iuupd")
 texture_pressed = ExtResource("14_hqusb")
+shape = SubResource("RectangleShape2D_1yd3e")
+shape_visible = false
 
 [node name="jump" type="TouchScreenButton" parent="."]
-position = Vector2(1436, 483)
+position = Vector2(1432, 451)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("15_5s210")
 texture_pressed = ExtResource("16_uavu1")
+shape = SubResource("RectangleShape2D_3eisx")
+shape_visible = false
