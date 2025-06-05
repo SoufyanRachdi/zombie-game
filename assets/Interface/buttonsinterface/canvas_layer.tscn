@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dopdg5cugvbl7"]
+[gd_scene load_steps=15 format=3 uid="uid://dopdg5cugvbl7"]
 
 [ext_resource type="Texture2D" uid="uid://ctxdf5w0fcrak" path="res://phone UI/down.png" id="1_201ix"]
 [ext_resource type="Texture2D" uid="uid://cn4e6h1u565ov" path="res://phone UI/downGray.png" id="2_shcr5"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cga0gmpi2pxfd" path="res://phone UI/shootGray.png" id="10_c7v7d"]
 [ext_resource type="Texture2D" uid="uid://d3t7c7luigjsj" path="res://phone UI/reload.png" id="11_wep02"]
 [ext_resource type="Texture2D" uid="uid://da6wg62vemcvc" path="res://phone UI/reloadGray.png" id="12_86hws"]
+[ext_resource type="Texture2D" uid="uid://cgs7yemolm8wo" path="res://phone UI/run.png" id="13_iuupd"]
+[ext_resource type="Texture2D" uid="uid://dlbf7c0bhoyh6" path="res://phone UI/run_clicked.png" id="14_hqusb"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -52,3 +54,9 @@ texture_normal = ExtResource("11_wep02")
 texture_pressed = ExtResource("12_86hws")
 
 [node name="run" type="TouchScreenButton" parent="."]
+position = Vector2(1423, 473)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("13_iuupd")
+texture_pressed = ExtResource("14_hqusb")
+
+[node name="jump" type="TouchScreenButton" parent="."]
