@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3f8v2au21kdo"
-path="res://.godot/imported/left.png-1ac01d187f6e92d113392948802efb0e.ctex"
+uid="uid://cga0gmpi2pxfd"
+path="res://.godot/imported/shootGray.png-7200d7327235ec42a2df43a928b55a1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/phone UI/left.png"
-dest_files=["res://.godot/imported/left.png-1ac01d187f6e92d113392948802efb0e.ctex"]
+source_file="res://phone UI/shootGray.png"
+dest_files=["res://.godot/imported/shootGray.png-7200d7327235ec42a2df43a928b55a1f.ctex"]
 
 [params]
 

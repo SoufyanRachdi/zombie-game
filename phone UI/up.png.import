@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://durslh4yt340n"
-path="res://.godot/imported/rightGray.png-56e65a836e97babcbdb57557a3035291.ctex"
+uid="uid://jc5kkfnh27j3"
+path="res://.godot/imported/up.png-fda7984c100d30cb4868318e86986bac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/phone UI/rightGray.png"
-dest_files=["res://.godot/imported/rightGray.png-56e65a836e97babcbdb57557a3035291.ctex"]
+source_file="res://phone UI/up.png"
+dest_files=["res://.godot/imported/up.png-fda7984c100d30cb4868318e86986bac.ctex"]
 
 [params]
 

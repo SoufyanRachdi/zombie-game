@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da6wg62vemcvc"
-path="res://.godot/imported/reloadGray.png-46dc1042e745f235ab9df45641f9c1a1.ctex"
+uid="uid://cvq4esslwbfjf"
+path="res://.godot/imported/right.png-9e00a565d2d0397f83c210346fdaa5f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/phone UI/reloadGray.png"
-dest_files=["res://.godot/imported/reloadGray.png-46dc1042e745f235ab9df45641f9c1a1.ctex"]
+source_file="res://phone UI/right.png"
+dest_files=["res://.godot/imported/right.png-9e00a565d2d0397f83c210346fdaa5f4.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cga0gmpi2pxfd"
-path="res://.godot/imported/shootGray.png-e6b0f95d8419bb9723f67180b0c0026f.ctex"
+uid="uid://3q8cfa8fkrmh"
+path="res://.godot/imported/shoot.png-4f76cc8429900367cc5a5b37c2e97488.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/phone UI/shootGray.png"
-dest_files=["res://.godot/imported/shootGray.png-e6b0f95d8419bb9723f67180b0c0026f.ctex"]
+source_file="res://phone UI/shoot.png"
+dest_files=["res://.godot/imported/shoot.png-4f76cc8429900367cc5a5b37c2e97488.ctex"]
 
 [params]
 
