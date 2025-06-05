@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dopdg5cugvbl7"]
+[gd_scene load_steps=17 format=3 uid="uid://dopdg5cugvbl7"]
 
 [ext_resource type="Texture2D" uid="uid://ctxdf5w0fcrak" path="res://phone UI/down.png" id="1_201ix"]
 [ext_resource type="Texture2D" uid="uid://cn4e6h1u565ov" path="res://phone UI/downGray.png" id="2_shcr5"]
@@ -14,29 +14,31 @@
 [ext_resource type="Texture2D" uid="uid://da6wg62vemcvc" path="res://phone UI/reloadGray.png" id="12_86hws"]
 [ext_resource type="Texture2D" uid="uid://cgs7yemolm8wo" path="res://phone UI/run.png" id="13_iuupd"]
 [ext_resource type="Texture2D" uid="uid://dlbf7c0bhoyh6" path="res://phone UI/run_clicked.png" id="14_hqusb"]
+[ext_resource type="Texture2D" uid="uid://67gc7g5h6u0r" path="res://phone UI/jump.png" id="15_5s210"]
+[ext_resource type="Texture2D" uid="uid://3l8lxcpxp8d7" path="res://phone UI/jump_clicked.png" id="16_uavu1"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="bottom" type="TouchScreenButton" parent="."]
-position = Vector2(179, 917)
+position = Vector2(179, 912)
 scale = Vector2(11, 11)
 texture_normal = ExtResource("1_201ix")
 texture_pressed = ExtResource("2_shcr5")
 
 [node name="left" type="TouchScreenButton" parent="."]
-position = Vector2(37, 790)
+position = Vector2(37, 781)
 scale = Vector2(11, 11)
 texture_normal = ExtResource("3_ss2ak")
 texture_pressed = ExtResource("4_nc167")
 
 [node name="right" type="TouchScreenButton" parent="."]
-position = Vector2(320, 796)
+position = Vector2(320, 788)
 scale = Vector2(11, 11)
 texture_normal = ExtResource("5_dvia3")
 texture_pressed = ExtResource("6_0ftv4")
 
 [node name="up" type="TouchScreenButton" parent="."]
-position = Vector2(179, 660)
+position = Vector2(179, 651)
 scale = Vector2(11, 11)
 texture_normal = ExtResource("7_ym34n")
 texture_pressed = ExtResource("8_quvkc")
@@ -54,9 +56,13 @@ texture_normal = ExtResource("11_wep02")
 texture_pressed = ExtResource("12_86hws")
 
 [node name="run" type="TouchScreenButton" parent="."]
-position = Vector2(1423, 473)
+position = Vector2(149, 360)
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("13_iuupd")
 texture_pressed = ExtResource("14_hqusb")
 
 [node name="jump" type="TouchScreenButton" parent="."]
+position = Vector2(1436, 483)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("15_5s210")
+texture_pressed = ExtResource("16_uavu1")
