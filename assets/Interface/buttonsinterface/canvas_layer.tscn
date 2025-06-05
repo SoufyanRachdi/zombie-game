@@ -1,0 +1,54 @@
+[gd_scene load_steps=13 format=3 uid="uid://dopdg5cugvbl7"]
+
+[ext_resource type="Texture2D" uid="uid://ctxdf5w0fcrak" path="res://phone UI/down.png" id="1_201ix"]
+[ext_resource type="Texture2D" uid="uid://cn4e6h1u565ov" path="res://phone UI/downGray.png" id="2_shcr5"]
+[ext_resource type="Texture2D" uid="uid://d3f8v2au21kdo" path="res://phone UI/left.png" id="3_ss2ak"]
+[ext_resource type="Texture2D" uid="uid://dqno0ctu8115c" path="res://phone UI/leftGray.png" id="4_nc167"]
+[ext_resource type="Texture2D" uid="uid://cvq4esslwbfjf" path="res://phone UI/right.png" id="5_dvia3"]
+[ext_resource type="Texture2D" uid="uid://durslh4yt340n" path="res://phone UI/rightGray.png" id="6_0ftv4"]
+[ext_resource type="Texture2D" uid="uid://jc5kkfnh27j3" path="res://phone UI/up.png" id="7_ym34n"]
+[ext_resource type="Texture2D" uid="uid://bur3kwjvb2hvy" path="res://phone UI/upGray.png" id="8_quvkc"]
+[ext_resource type="Texture2D" uid="uid://3q8cfa8fkrmh" path="res://phone UI/shoot.png" id="9_ys5k1"]
+[ext_resource type="Texture2D" uid="uid://cga0gmpi2pxfd" path="res://phone UI/shootGray.png" id="10_c7v7d"]
+[ext_resource type="Texture2D" uid="uid://d3t7c7luigjsj" path="res://phone UI/reload.png" id="11_wep02"]
+[ext_resource type="Texture2D" uid="uid://da6wg62vemcvc" path="res://phone UI/reloadGray.png" id="12_86hws"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="bottom" type="TouchScreenButton" parent="."]
+position = Vector2(179, 917)
+scale = Vector2(11, 11)
+texture_normal = ExtResource("1_201ix")
+texture_pressed = ExtResource("2_shcr5")
+
+[node name="left" type="TouchScreenButton" parent="."]
+position = Vector2(37, 790)
+scale = Vector2(11, 11)
+texture_normal = ExtResource("3_ss2ak")
+texture_pressed = ExtResource("4_nc167")
+
+[node name="right" type="TouchScreenButton" parent="."]
+position = Vector2(320, 796)
+scale = Vector2(11, 11)
+texture_normal = ExtResource("5_dvia3")
+texture_pressed = ExtResource("6_0ftv4")
+
+[node name="up" type="TouchScreenButton" parent="."]
+position = Vector2(179, 660)
+scale = Vector2(11, 11)
+texture_normal = ExtResource("7_ym34n")
+texture_pressed = ExtResource("8_quvkc")
+
+[node name="shoot" type="TouchScreenButton" parent="."]
+position = Vector2(1431, 772)
+scale = Vector2(15.25, 12.9375)
+texture_normal = ExtResource("9_ys5k1")
+texture_pressed = ExtResource("10_c7v7d")
+
+[node name="reload" type="TouchScreenButton" parent="."]
+position = Vector2(1697, 608)
+scale = Vector2(11, 11)
+texture_normal = ExtResource("11_wep02")
+texture_pressed = ExtResource("12_86hws")
+
+[node name="run" type="TouchScreenButton" parent="."]
