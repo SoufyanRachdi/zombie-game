@@ -31,16 +31,16 @@ size = Vector2(14, 14)
 size = Vector2(14, 14)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_siq4c"]
-radius = 7.95
+radius = 8.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i75ly"]
-radius = 9.0
+radius = 11.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yd3e"]
 size = Vector2(700, 900)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3eisx"]
-size = Vector2(60, 70)
+size = Vector2(70, 80)
 
 [node name="button_interface" type="CanvasLayer"]
 layer = 0
