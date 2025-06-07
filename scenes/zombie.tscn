@@ -444,7 +444,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w4jln"]
-size = Vector3(0.0431982, 0.147832, 0.05)
+size = Vector3(0.0431982, 0.155854, 0.05)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nht4a"]
 radius = 0.0340978
@@ -612,7 +612,7 @@ libraries = {
 movie_quit_on_finish = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00450928, 0.0875742, 0)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.00450928, 0.0835629, 0)
 shape = SubResource("BoxShape3D_w4jln")
 
 [node name="Timer" type="Timer" parent="."]
