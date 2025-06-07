@@ -158,8 +158,8 @@ shape = SubResource("CapsuleShape3D_ung36")
 
 [node name="tree_m" parent="NavigationRegion3D/tree10" instance=ExtResource("4_2mj33")]
 
-[node name="endmap" parent="." groups=["end"] instance=ExtResource("4_xwyg4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -35, 0)
+[node name="endmap" parent="NavigationRegion3D" groups=["end"] instance=ExtResource("4_xwyg4")]
+transform = Transform3D(1.03156, 0, 0, 0, 1.29025, 0, 0, 0, 1.03156, 0, -3, 0)
 
 [node name="DefaiteMenu" parent="." instance=ExtResource("5_miufu")]
 visible = false

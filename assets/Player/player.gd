@@ -66,19 +66,24 @@ func _physics_process(delta: float) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 
 	# Run / Speed handling
-	var is_running = Input.is_action_pressed("speed") and energy > 0 and is_on_floor()
-	if is_running:
+	var is_running = Input.is_action_pressed("speed") and energy > 0.5 and is_on_floor()
+	if Input.is_action_pressed("speed") and is_on_floor() and energy > 0:
+		is_running = true
 		SPEED = RUN_SPEED
 		energy -= ENERGY_DRAIN * delta
-		if energy < 0:
+		if energy <= 0:
 			energy = 0
+			is_running = false
 	else:
+		is_running = false
 		SPEED = 7.0
 		energy += ENERGY_RECOVERY * delta
 		if energy > MAX_ENERGY:
 			energy = MAX_ENERGY
+
 
 	# Shoot
 	if Input.is_action_pressed("shoot") and bullet_left > 0:
