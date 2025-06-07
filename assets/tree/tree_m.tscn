@@ -60,7 +60,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_a1lsx"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0i4tx"]
 resource_name = "uploads_files_3523647_shapespark-low-poly-plants-kit-double-sided-for-baking_BezierCurve_028"
 _surfaces = [{
 "aabb": AABB(-0.960239, 0, -0.680668, 1.52316, 7.86611, 1.67804),
@@ -105,5 +105,5 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jdvpc")
 
 [node name="tree_m" type="MeshInstance3D"]
-mesh = SubResource("ArrayMesh_a1lsx")
+mesh = SubResource("ArrayMesh_0i4tx")
 skeleton = NodePath("")
