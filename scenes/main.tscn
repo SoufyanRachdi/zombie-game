@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bjbw5hkwrcn73"]
 
-[ext_resource type="PackedScene" uid="uid://cbkbqrw4mu4l" path="res://scenes/zombie.tscn" id="1_pm6kr"]
+[ext_resource type="PackedScene" uid="uid://cbkbqrw4mu4l" path="res://assets/Zombie/zombie.tscn" id="1_pm6kr"]
 [ext_resource type="PackedScene" uid="uid://dyd48u6y02av8" path="res://assets/Player/player.tscn" id="2_wi3ph"]
 [ext_resource type="ArrayMesh" uid="uid://dnedhhvj7ceqh" path="res://assets/Map/mesa/A_large_flat_topped__0607092044_texture_obj/A_large_flat_topped__0607092044_texture.obj" id="3_ni25e"]
 [ext_resource type="PackedScene" uid="uid://de6kkxkhqu6rb" path="res://assets/tree/tree_m.tscn" id="4_2mj33"]
@@ -32,24 +32,6 @@ radius = 0.284801
 height = 14.0071
 
 [node name="main" type="Node3D"]
-
-[node name="zombie" parent="." instance=ExtResource("1_pm6kr")]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 11.1656, 0.43235, -18.7539)
-
-[node name="zombie2" parent="." instance=ExtResource("1_pm6kr")]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, -10.0983, 0.43235, 12.3518)
-
-[node name="zombie3" parent="." instance=ExtResource("1_pm6kr")]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 11.1656, 0.43235, -10.2226)
-
-[node name="zombie4" parent="." instance=ExtResource("1_pm6kr")]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 11.1656, 0.43235, 14.0844)
-
-[node name="zombie5" parent="." instance=ExtResource("1_pm6kr")]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 11.1656, 0.43235, 6.24083)
-
-[node name="zombie6" parent="." instance=ExtResource("1_pm6kr")]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 15.9099, 0.416626, -7.42361)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wu04l")
@@ -165,3 +147,32 @@ transform = Transform3D(1.03156, 0, 0, 0, 1.29025, 0, 0, 0, 1.03156, 0, -3, 0)
 visible = false
 
 [node name="CanvasLayer" parent="." instance=ExtResource("7_b5weu")]
+
+[node name="zombie" parent="." instance=ExtResource("1_pm6kr")]
+
+[node name="zombie2" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0.0173439, 0.0144901, -7.08336)
+
+[node name="zombie3" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 11.5914, 0.0144901, 0)
+
+[node name="zombie4" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0.0173439, 0.0144901, -11.5811)
+
+[node name="zombie5" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 12.8134, 0.0144901, 3.06087)
+
+[node name="zombie6" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, -5.14078, 0.0144901, 8.84683)
+
+[node name="zombie7" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 5.57743, 0.0144901, 12.2146)
+
+[node name="zombie8" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 6.82852, 0.0144901, 6.03307)
+
+[node name="zombie9" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0.0173439, 0.0144901, 6.0257)
+
+[node name="zombie10" parent="." instance=ExtResource("1_pm6kr")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 5.75856, 0.0144901, 0)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=4 uid="uid://cbkbqrw4mu4l"]
 
-[ext_resource type="Script" path="res://scenes/zombie.gd" id="1_nowmp"]
+[ext_resource type="Script" path="res://assets/Zombie/zombie.gd" id="1_nowmp"]
 [ext_resource type="Texture2D" uid="uid://c4hjbp2av5dvr" path="res://assets/Zombie/skin_orc.png" id="2_m411e"]
 [ext_resource type="PackedScene" uid="uid://bwiqx5epehhf7" path="res://assets/Zombie/healthbar.tscn" id="3_jqc3l"]
 
