@@ -22,17 +22,15 @@ var is_attacked: bool = false        # Whether zombie was recently attacked
 
 func _ready() -> void:
 	print("Player node:", player)
-	$holder/AnimationPlayer.play("mixamo_com")
+	$holder/AnimationPlayer.play("run")
 	damage_timer.wait_time = 0.1
 	damage_timer.one_shot = false
 	health_bar_container.visible = false
 	health_bar_container.update_health(health, max_health)
 	
 	# Setup aggro timer
-	add_child(aggro_timer)
 	aggro_timer.wait_time = aggro_duration
 	aggro_timer.one_shot = true
-	aggro_timer.timeout.connect(_on_aggro_timer_timeout)
 
 func _physics_process(delta: float) -> void:
 	velocity.y -= gravity
