@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=4 uid="uid://cbkbqrw4mu4l"]
 
-[ext_resource type="Script" path="res://assets/Zombie/zombie.gd" id="1_nowmp"]
+[ext_resource type="Script" uid="uid://cfvsc7bi7c8ex" path="res://assets/Zombie/zombie.gd" id="1_nowmp"]
 [ext_resource type="Texture2D" uid="uid://c4hjbp2av5dvr" path="res://assets/Zombie/skin_orc.png" id="2_m411e"]
 [ext_resource type="PackedScene" uid="uid://bwiqx5epehhf7" path="res://assets/Zombie/healthbar.tscn" id="3_jqc3l"]
 
@@ -437,10 +437,10 @@ tracks/13/keys = PackedFloat32Array(0, 1, 0.707107, -0.707107, -4.32964e-17, -4.
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c2saq"]
 _data = {
-"RESET": SubResource("Animation_bpy0i"),
-"Take 001": SubResource("Animation_1lxxr"),
-"die": SubResource("Animation_yjr5k"),
-"mixamo_com": SubResource("Animation_hrded")
+&"RESET": SubResource("Animation_bpy0i"),
+&"Take 001": SubResource("Animation_1lxxr"),
+&"die": SubResource("Animation_yjr5k"),
+&"mixamo_com": SubResource("Animation_hrded")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w4jln"]
@@ -607,7 +607,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_nlykj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="holder"]
 libraries = {
-"": SubResource("AnimationLibrary_c2saq")
+&"": SubResource("AnimationLibrary_c2saq")
 }
 movie_quit_on_finish = true
 
@@ -644,7 +644,11 @@ transparent_bg = true
 [node name="HealthBarContainer" parent="SubViewport" instance=ExtResource("3_jqc3l")]
 anchor_path = NodePath("../..")
 
+[node name="AggroTimer" type="Timer" parent="."]
+wait_time = 30.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
+[connection signal="timeout" from="AggroTimer" to="." method="_on_aggro_timer_timeout"]
