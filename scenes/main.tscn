@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bjbw5hkwrcn73"]
+[gd_scene load_steps=25 format=4 uid="uid://bjbw5hkwrcn73"]
 
 [ext_resource type="PackedScene" uid="uid://cbkbqrw4mu4l" path="res://assets/Zombie/zombie.tscn" id="1_pm6kr"]
 [ext_resource type="Texture2D" uid="uid://ij14c1okjoab" path="res://sourcefile/med.jpg" id="1_ya4ey"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bkx50hex5llqi" path="res://sourcefile/trees/uploads_files_3523647_shapespark-low-poly-plants-kit-double-sided-for-baking_branch-2-01.png" id="6_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://dopdg5cugvbl7" path="res://assets/Interface/buttonsinterface/button_interface.tscn" id="7_b5weu"]
 [ext_resource type="Texture2D" uid="uid://cn46l48k11mk" path="res://sourcefile/trees/uploads_files_3523647_shapespark-low-poly-plants-kit-double-sided-for-baking_branch-2-02.png" id="7_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://dcam2tk6y2v2f" path="res://assets/house1/house.tscn" id="8_trceg"]
 [ext_resource type="Texture2D" uid="uid://h4io685767vj" path="res://sourcefile/moon-png-44673.png" id="12_eb6dy"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_eb6dy"]
@@ -185,6 +186,9 @@ transform = Transform3D(18, 0, 0, 0, 22.5, 0, 0, 0, 18, 0, -5, 0)
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.3564)
 multimesh = SubResource("MultiMesh_choun")
+
+[node name="house" parent="NavigationRegion3D" instance=ExtResource("8_trceg")]
+transform = Transform3D(13.1031, 0, 0, 0, 13.1031, 0, 0, 0, 13.1031, 250.891, 0, -74.8592)
 
 [node name="DefaiteMenu" parent="." instance=ExtResource("5_miufu")]
 
